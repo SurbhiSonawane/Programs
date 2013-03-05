@@ -1,0 +1,43 @@
+
+README FILE
+
+
+***Execution
+chmod +x filename.py 
+./filename.py
+
+*******python_header.py**************
+
+The class string_match_score includes a constructor, 3 datamembers & 4 functions.
+Data members:
+*str1 
+*str2 (the strings whose match score is to be found)
+*match_score
+
+Functions:
+**get_input()
+  This function is used to assign values to str1 &str2 taking from the user through console (for part1 of the assignment)
+**input_from_file(s1,s2)
+  This function is also used to assign values to str1 & str2 but by reading the strings though the files whose names are obtained as command line 
+  arguments.(for part2 of assignment)
+**evaluate_edit_distance(s1,s2)
+  Evaluates edit distance between any two strings s1,s2 & returns it.
+**evaluate_match_score()
+  Evaluates the match score between the data members of the class str1 & str2.
+  THis consists of first finding the substrings of both the strings and them the edit distance between each pair obtained.
+  THe match score of the strings is then the total number of subtring pairs which had edit distance<=3
+  
+  
+*******match_score.py****************
+
+Imports the python_header file.
+Takes the input strings from the user by calling the get_input function of the string_match_score class and evaluates the match score between them
+and prints it on the console.
+
+*******file_string_ms.py************
+
+Imports the python_header file.
+Takes two file names as command line arguments.
+If they don't exist gives an error..but if they do , then
+Reads the first string of the first file and for each string obtained from the second file (newline separated),computes the match score between them.
+It then outputs the line number(s) of the second file which had the highest match score.
